@@ -1,14 +1,21 @@
 var Game = function(ctx) {
 	this.board = new Board(360, 360, '#ffce9e', '#d18b47');
 	this.ctx = ctx;
+	this.turn = Piece.WHITE;
+	this.players = {};
 }
 
 Game.prototype.initGame = function() {
 	this.board.initBoard();
-	q = new Piece(Piece.BLACK, Piece.QUEEN);
-	this.board.setPiece(q, 1, 1);
-	K = new Piece(Piece.WHITE, Piece.KING);
-	this.board.setPiece(K, 7, 7);
-	this.board.turnBoard();
+	
+	white = new Player(Piece.WHITE, this.board);
+	black = new Player(Piece.BLACK, this.board);
+	
+	white.initPlayer();
+	black.initPlayer();
+	
+	white.move(2, 6, 2, 4);
+	
+	//this.board.turnBoard();
 	this.board.draw(this.ctx);
 }

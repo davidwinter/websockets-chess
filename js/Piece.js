@@ -21,3 +21,7 @@ Piece.prototype.draw = function(ctx, x, y) {
 		ctx.drawImage(this, x, y);
 	};
 }
+
+Piece.prototype.getColour = function() {
+	return this.colour;
+}
