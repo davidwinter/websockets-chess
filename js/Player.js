@@ -1,7 +1,7 @@
 var Player = function(colour, board) {
 	this.board = board;
 	this.colour = colour;
-	this.pieces = [];
+	this.capturedPieces = [];
 }
 
 
@@ -44,6 +44,11 @@ Player.prototype.move = function(from_x, from_y, to_x, to_y) {
 	
 	if (piece && piece.getColour() == this.colour)
 	{
-		this.board.movePiece(from_x, from_y, to_x, to_y);
+		captured = this.board.movePiece(from_x, from_y, to_x, to_y);
+		if (captured)
+		{
+			this.capturedPieces.push(captured);
+		}
+		console.log(this.capturedPieces);
 	}
 }

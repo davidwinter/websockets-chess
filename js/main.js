@@ -1,6 +1,7 @@
+var game;
+
 $(function() {
-	cnv = $('#board');
-	ctx = cnv.get(0).getContext('2d');
-	game = new Game(ctx);
+	canvas = $('#board').get(0);
+	game = new Game(canvas);
 	game.initGame();
 });
