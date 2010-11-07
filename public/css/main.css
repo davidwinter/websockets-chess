@@ -1,20 +1,27 @@
 body {
 	text-align: center;
+	background: url(../images/wood.jpg);
+	font-family: Georgia;
+	color: #fff;
+	text-shadow: #000 2px 2px 0px;
 }
 
 #wrapper {
 	margin: 50px auto;
 	width: 400px;
-	position: relative;
 }
 
-.overlay {
+canvas {
+	-webkit-box-shadow: #000 3px 3px 5px;
+}
+
+#overlay {
 	position: absolute;
 	background: rgba(50, 50, 50, 0.9);
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	color: white;
-	padding: 20px;
+	padding: 100px 10px;
+	font-size: 3em;
 }

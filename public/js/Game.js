@@ -21,6 +21,8 @@ Game.prototype.initGame = function() {
 	this.board = new Board(360, 360, '#ffce9e', '#d18b47');
 	this.board.initBoard();
 	
+	$('#overlay').html('<p>Waiting for an opponent&hellip;</p>');
+	
 	this.player = null;
 	this.players = [];
 	
@@ -91,14 +93,14 @@ Game.prototype.onreceive = function(data) {
 			break;
 		
 		case Game.MESSAGE_TYPE_CONNECT:
-			$('#waiting').fadeOut();
+			$('#overlay').fadeOut();
 			this.initGame();
 			this.player = data['data'];
 			console.log(this.player);
 			break;
 			
 		case Game.MESSAGE_TYPE_OPPONENT_LEFT:
-			$('#waiting').fadeIn();
+			$('#overlay').fadeIn();
 			
 		default:
 			break;
