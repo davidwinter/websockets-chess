@@ -15,9 +15,17 @@ var Game = function(cnv) {
 Game.MESSAGE_TYPE_CONNECT = 1;
 Game.MESSAGE_TYPE_WAITING_OPPONENT = 2;
 Game.MESSAGE_TYPE_MOVE = 3;
+Game.MESSAGE_TYPE_OPPONENT_LEFT = 4;
 
 Game.prototype.initGame = function() {
+	this.board = new Board(360, 360, '#ffce9e', '#d18b47');
 	this.board.initBoard();
+	
+	this.player = null;
+	this.players = [];
+	
+	this.moveFrom = null;
+	this.moveTo = null;
 	
 	white = new Player(Piece.WHITE, this.board);
 	black = new Player(Piece.BLACK, this.board);
@@ -84,9 +92,13 @@ Game.prototype.onreceive = function(data) {
 		
 		case Game.MESSAGE_TYPE_CONNECT:
 			$('#waiting').fadeOut();
+			this.initGame();
 			this.player = data['data'];
 			console.log(this.player);
 			break;
+			
+		case Game.MESSAGE_TYPE_OPPONENT_LEFT:
+			$('#waiting').fadeIn();
 			
 		default:
 			break;

@@ -30,6 +30,13 @@ function init() {
 			console.log(client.id+' moves: '+message);
 			socket.send(players[client.id]['opponent'], message);
 		});
+		
+		client.addListener('close', function() {
+			console.log(client.id+' has closed connection');
+			socket.send(players[client.id]['opponent'], JSON.stringify({type: 4, data: null}));
+			waitingPlayers.push(players[client.id]['opponent']);
+			delete players[client.id];
+		});
 	});
 	
 	socket.listen(8000);
