@@ -13,7 +13,8 @@ var Game = function(cnv) {
 }
 
 Game.MESSAGE_TYPE_CONNECT = 1;
-Game.MESSAGE_TYPE_MOVE = 2;
+Game.MESSAGE_TYPE_WAITING_OPPONENT = 2;
+Game.MESSAGE_TYPE_MOVE = 3;
 
 Game.prototype.initGame = function() {
 	this.board.initBoard();
@@ -82,6 +83,7 @@ Game.prototype.onreceive = function(data) {
 			break;
 		
 		case Game.MESSAGE_TYPE_CONNECT:
+			$('#waiting').fadeOut();
 			this.player = data['data'];
 			console.log(this.player);
 			break;

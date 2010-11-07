@@ -6,11 +6,14 @@
 		<link rel="stylesheet" href="css/main.css" />
 	</head>
 	<body>
-		<h1>Chess</h1>
-		<canvas id="board" width="360" height="360">
-			<p>This game requires a browser that can support the <code>canvas</code> tag.</p>
-			<p>Please install Google Chrome.</p>
-		</canvas>
+		<div id="wrapper">
+			<h1>Chess</h1>
+			<canvas id="board" width="360" height="360">
+				<p>This game requires a browser that can support the <code>canvas</code> tag.</p>
+				<p>Please install Google Chrome.</p>
+			</canvas>
+			<div id="waiting" class="overlay">Waiting for an opponent</div>
+		</div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 		<script src="js/Piece.js"></script>

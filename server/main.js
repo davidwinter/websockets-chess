@@ -23,14 +23,12 @@ function init() {
 		}
 		else {
 			waitingPlayers.push(client.id);
+			client.write(JSON.stringify({type: 2, data: null}));
 		}
-		
-		//client.send(JSON.stringify({type: 1, data: players.shift()}));
-		
+				
 		client.addListener('message', function(message) {
 			console.log(client.id+' moves: '+message);
 			socket.send(players[client.id]['opponent'], message);
-			//socket.broadcast(message);
 		});
 	});
 	
