@@ -39,6 +39,10 @@ Player.prototype.initPlayer = function() {
 	}
 }
 
+Player.prototype.getColour = function() {
+	return this.colour;
+}
+
 Player.prototype.move = function(from_x, from_y, to_x, to_y) {
 	piece = this.board.getPiece(from_x, from_y);
 	
