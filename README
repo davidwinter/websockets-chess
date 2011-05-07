@@ -1,0 +1,16 @@
+Chess
+
+This is an experiment to create a chess game using HTML 5 canvas and websockets.
+
+You'll need node.js
+
+To start the server, run:
+
+	node server/main.js
+
+Then open public/index.html in your browser. You'll get the waiting for oponent screen. Open a new tab, or get someone else to join, and then play.
+
+The game only currently renders and communicates between clients. No chess rules are enforced.
+
+This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License
+http://creativecommons.org/licenses/by-sa/3.0/
