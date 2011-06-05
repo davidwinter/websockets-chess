@@ -1,0 +1,4 @@
+syntax: glob
+logs/*
+server/node_modules
+
