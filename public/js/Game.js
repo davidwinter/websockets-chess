@@ -9,7 +9,7 @@ var Game = function(cnv) {
 	this.moveFrom;
 	this.moveTo;
 	
-	this.socket = new WebSocket("ws://"+document.location.host+":8000");
+	this.socket = new WebSocket("ws://"+document.location.host+":443");
 }
 
 Game.MESSAGE_TYPE_CONNECT = 1;
