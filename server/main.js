@@ -61,7 +61,7 @@ function init() {
 		});
 	});
 	
-	socket.listen(8000);
+	socket.listen(443);
 }
 
 init();
